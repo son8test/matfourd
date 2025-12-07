@@ -16,3 +16,5 @@ endif( )
 
 add_executable( test-vec-equality vec/equality.cxx )
 add_test( NAME test-vec-equality COMMAND test-vec-equality )
+add_executable( test-vec-additive vec/additive.cxx )
+add_test( NAME test-vec-additive COMMAND test-vec-additive )
