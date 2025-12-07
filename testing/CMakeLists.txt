@@ -22,4 +22,6 @@ add_executable( test-vec-alias vec/alias.cxx )
 add_test( NAME test-vec-alias COMMAND test-vec-alias )
 add_executable( test-vec-multiply-dot vec/multiply/dot.cxx )
 add_test( NAME test-vec-multiply-dot COMMAND test-vec-multiply-dot )
+add_executable( test-vec-multiply-scalar vec/multiply/scalar.cxx )
+add_test( NAME test-vec-multiply-scalar COMMAND test-vec-multiply-scalar )
 
