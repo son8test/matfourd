@@ -2,6 +2,8 @@ set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_CXX_STANDARD_REQUIRED ON )
 set( CMAKE_CXX_EXTENSIONS OFF )
 
+link_libraries( son8::matfourd )
+
 # Add tests ⮟ HERE ⮟ that should NOT use extra warning flags
 
 if ( MSVC )
@@ -11,3 +13,6 @@ else( )
 endif( )
 
 # Add tests ⮟ HERE ⮟ that SHOULD use extra warning flags
+
+add_executable( test-vec-equality vec/equality.cxx )
+add_test( NAME test-vec-equality COMMAND test-vec-equality )
