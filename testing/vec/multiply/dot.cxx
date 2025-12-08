@@ -17,7 +17,9 @@ int main( ) {
     auto test = [&failed]( Msg msg, auto l, auto r, auto expect ) {
         auto lr = l * r;
         auto rl = r * l;
-        if ( lr == rl && lr == expect && rl == expect ) return;
+        auto lr_L = ~l ^ r;
+        auto rl_L = ~r ^ l;
+        if ( lr == rl && lr == expect && rl == expect && lr_L == expect && rl_L == expect ) return;
         ++failed;
         std::cout << msg
             << ", l: " << l
@@ -25,6 +27,8 @@ int main( ) {
             << ", expect: " << expect
             << ", result lr: " << lr
             << ", result rl: " << rl
+            << ", result lr layout-aware: " << lr_L
+            << ", result rl layout-aware: " << rl_L
             << std::endl;
     };
 
