@@ -14,6 +14,7 @@ endif( )
 
 # Add tests ⮟ HERE ⮟ that SHOULD use extra warning flags
 
+# Vec
 add_executable( test-vec-equality vec/equality.cxx )
 add_test( NAME test-vec-equality COMMAND test-vec-equality )
 add_executable( test-vec-additive vec/additive.cxx )
@@ -26,4 +27,8 @@ add_executable( test-vec-multiply-scalar vec/multiply/scalar.cxx )
 add_test( NAME test-vec-multiply-scalar COMMAND test-vec-multiply-scalar )
 add_executable( test-vec-multiply-cross vec/multiply/cross.cxx )
 add_test( NAME test-vec-multiply-cross COMMAND test-vec-multiply-cross )
+add_executable( test-vec-type vec/type.cxx )
+add_test( NAME test-vec-type COMMAND test-vec-type )
+
+# Mat
 
