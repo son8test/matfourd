@@ -16,9 +16,10 @@ int main( ) {
 
     auto failed = 0u;
     auto test = [&failed]( Msg msg, auto result, auto expect ) {
+        auto &err = std::cerr;
         if ( result == expect ) return;
         ++failed;
-        std::cerr << msg
+        err << msg
             << ", result: " << result
             << ", expect: " << expect
             << std::endl;
@@ -31,6 +32,10 @@ int main( ) {
     test( "Vec2{ }", vec2, Vec2{ 0, 0 } );
     test( "Vec3{ }", vec3, Vec3{ 0, 0, 0 } );
     test( "Vec4{ }", vec4, Vec4{ 0, 0, 0, 0 } );
+
+    test( "Vec2 size", vec2.size( ), 2u );
+    test( "Vec3 size", vec3.size( ), 3u );
+    test( "Vec4 size", vec4.size( ), 4u );
 
     if ( failed ) return 1;
 }
