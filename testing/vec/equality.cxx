@@ -1,22 +1,12 @@
+#include <testing/vec_alias.hxx>
 #include <son8/matfourd/vec/equality.hxx>
-#include <son8/matfourd/vec/alias.hxx>
-// std
-#include <iostream>
-
-namespace m4d = son8::matfourd;
 
 int main( ) {
-    using Vec2 = m4d::Vec2< int >;
-    using Vec3 = m4d::Vec3< int >;
-    using Vec4 = m4d::Vec4< int >;
-
-    int failed = 0;
-
-    auto test = [&failed]( char const *msg, auto ...args ) {
+    auto test = []( char const *msg, auto ...args ) {
         bool all = ( true && ... && args );
         if ( all ) return;
-        ++failed;
-        std::cerr << msg << std::endl;
+        failed( );
+        err << msg << std::endl;
     };
 
     Vec2 vec2{ 0, 1 };
@@ -38,9 +28,4 @@ int main( ) {
     test( "vec2 x inequality", vec2 != vec2_copy );
     test( "vec3 y inequality", vec3 != vec3_copy );
     test( "vec4 z inequality", vec4 != vec4_copy );
-
-    if ( failed ) {
-        std::cerr << "\tnumber of tests failed: " << failed << std::endl;
-        return 1;
-    }
 }

@@ -1,33 +1,12 @@
+#include <testing/mat_alias.hxx>
 #include <son8/matfourd/mat/equality.hxx>
-#include <son8/matfourd/mat/alias.hxx>
-// std
-#include <iostream>
-
-namespace m4d = son8::matfourd;
 
 int main( ) {
-    using Type = int;
-    using Msg = char const *;
-    using Vec2 = m4d::Vec< Type, 2 >;
-    using Vec3 = m4d::Vec< Type, 3 >;
-    using Vec4 = m4d::Vec< Type, 4 >;
-    using Mat2x2 = m4d::Mat2< Type >;
-    using Mat3x2 = m4d::Mat3x2< Type >;
-    using Mat4x2 = m4d::Mat4x2< Type >;
-    using Mat2x3 = m4d::Mat2x3< Type >;
-    using Mat3x3 = m4d::Mat3< Type >;
-    using Mat4x3 = m4d::Mat4x3< Type >;
-    using Mat2x4 = m4d::Mat2x4< Type >;
-    using Mat3x4 = m4d::Mat3x4< Type >;
-    using Mat4x4 = m4d::Mat4< Type >;
-
-    int failed{ };
-
-    auto test = [&failed]( Msg msg, auto ...args ) {
+    auto test = []( Msg msg, auto ...args ) {
         bool all = ( true && ... && args );
         if ( all ) return;
-        ++failed;
-        std::cerr << msg << std::endl;
+        failed( );
+        err << msg << std::endl;
     };
 
     Vec2 vec2_1{ 11, 21 }        , vec2_2{ 12, 22 }        , vec2_3{ 13, 23 }        , vec2_4{ 14, 24 };
@@ -83,6 +62,4 @@ int main( ) {
     test( "Mat2x4 inequality", mat2x4 != mat2x4_copy );
     test( "Mat3x4 inequality", mat3x4 != mat3x4_copy );
     test( "Mat4x4 inequality", mat4x4 != mat4x4_copy );
-
-    if ( failed ) return 1;
 }

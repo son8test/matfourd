@@ -1,34 +1,17 @@
+#include <testing/mat_alias.hxx>
 #include <son8/matfourd/mat/type.hxx>
-#include <son8/matfourd/mat/alias.hxx>
 #include <son8/matfourd/mat/equality.hxx>
 #include <son8/matfourd/print.hxx>
-// std
-#include <iostream>
 
 #define VEC2_0 { 0, 0 }
 #define VEC3_0 { 0, 0, 0 }
 #define VEC4_0 { 0, 0, 0, 0 }
 
-namespace m4d = son8::matfourd;
-
 int main( ) {
-    using Msg = char const *;
-    using Type = int;
-    using Mat2x2 = m4d::Mat2< Type >;
-    using Mat2x3 = m4d::Mat2x3< Type >;
-    using Mat2x4 = m4d::Mat2x4< Type >;
-    using Mat3x2 = m4d::Mat3x2< Type >;
-    using Mat3x3 = m4d::Mat3< Type >;
-    using Mat3x4 = m4d::Mat3x4< Type >;
-    using Mat4x2 = m4d::Mat4x2< Type >;
-    using Mat4x3 = m4d::Mat4x3< Type >;
-    using Mat4x4 = m4d::Mat4< Type >;
-
-    int failed{ };
-    auto test = [&failed]( Msg msg, auto result, auto expect ) {
+    auto test = []( Msg msg, auto result, auto expect ) {
         auto &err = std::cerr;
         if ( result == expect ) return;
-        ++failed;
+        failed( );
         err << msg
             << ", result: " << result
             << ", expect: " << expect
@@ -64,6 +47,4 @@ int main( ) {
     test( "Mat4x2 size", mat4x2.size( ), 8u );
     test( "Mat4x3 size", mat4x3.size( ), 12u );
     test( "Mat4x4 size", mat4x4.size( ), 16u );
-
-    if ( failed ) return 1;
 }

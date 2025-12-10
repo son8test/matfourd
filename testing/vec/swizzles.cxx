@@ -1,25 +1,14 @@
+#include <testing/vec_alias.hxx>
 #include <son8/matfourd/vec/swizzles.hxx>
-#include <son8/matfourd/vec/alias.hxx>
 #include <son8/matfourd/vec/equality.hxx>
 #include <son8/matfourd/print.hxx>
-// std
-#include <iostream>
-
-namespace m4d = son8::matfourd;
 
 int main( ) {
-    using Msg = char const *;
-    using Type = int;
-    using Vec2 = m4d::Vec2< Type >;
-    using Vec3 = m4d::Vec3< Type >;
-    using Vec4 = m4d::Vec4< Type >;
-
-    unsigned failed{ };
-    auto test = [&failed]( Msg msg, auto vec, auto swiz, auto expect ) {
+    auto test = []( Msg msg, auto vec, auto swiz, auto expect ) {
         auto &err = std::cerr;
         auto result = vec/swiz;
         if ( result == expect ) return;
-        ++failed;
+        failed( );
         err << msg
             << ", vec: " << vec
             << ", vec/swiz: " << result
@@ -42,6 +31,4 @@ int main( ) {
     test( "vec4/ww"  , vec4, ww  , Vec2{ 8, 8 } );
     test( "vec4/xzw" , vec4, xzw , Vec3{ 1, 4, 8 } );
     test( "vec4/yyw" , vec4, yyw , Vec3{ 2, 2, 8 } );
-
-    if ( failed ) return 1;
 }

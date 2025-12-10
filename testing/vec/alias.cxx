@@ -1,20 +1,10 @@
-#include <son8/matfourd/vec/alias.hxx>
-
-#include <iostream>
-
-namespace m4d = son8::matfourd;
+#include <testing/vec_alias.hxx>
 
 int main( ) {
-    using Vec2 = m4d::Vec2< int >;
-    using Vec3 = m4d::Vec3< int >;
-    using Vec4 = m4d::Vec4< int >;
-
-    auto failed = 0u;
-
-    auto test = [&failed]( char const *msg, bool check ) {
+    auto test = []( Msg msg, bool check ) {
         if ( check ) return;
-        ++failed;
-        std::cerr << msg << std::endl;
+        failed( );
+        err << msg << std::endl;
     };
 
     test( "Vec2 type col-major size", Vec2::size( ) == 2 );
@@ -30,6 +20,4 @@ int main( ) {
     static_assert( Vec2::size( ) == vec2.size( ) );
     static_assert( Vec3::size( ) == vec3.size( ) );
     static_assert( Vec4::size( ) == vec4.size( ) );
-
-    if ( failed ) return 1;
 }
