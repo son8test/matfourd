@@ -22,7 +22,7 @@ public:
     template< typename Type >
     Error &operator<<( Type const &type ) {
         failed( );
-        std::cout << type;
+        std::cerr << type;
         return *this;
     }
 
