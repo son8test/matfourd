@@ -29,11 +29,10 @@ add_executable( test-vec-multiply-cross vec/multiply/cross.cxx )
 add_test( NAME test-vec-multiply-cross COMMAND test-vec-multiply-cross )
 add_executable( test-vec-type vec/type.cxx )
 add_test( NAME test-vec-type COMMAND test-vec-type )
+add_executable( test-vec-swizzles vec/swizzles.cxx )
+add_test( NAME test-vec-swizzles COMMAND test-vec-swizzles )
 # Mat
 add_executable( test-mat-equality mat/equality.cxx )
 add_test( NAME test-mat-equality COMMAND test-mat-equality )
 add_executable( test-mat-type mat/type.cxx )
 add_test( NAME test-mat-type COMMAND test-mat-type )
-
-
-
