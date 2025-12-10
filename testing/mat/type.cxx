@@ -9,7 +9,6 @@
 
 int main( ) {
     auto test = []( Msg msg, auto result, auto expect ) {
-        auto &err = std::cerr;
         if ( result == expect ) return;
         failed( );
         err << msg

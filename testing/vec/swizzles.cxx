@@ -5,7 +5,6 @@
 
 int main( ) {
     auto test = []( Msg msg, auto vec, auto swiz, auto expect ) {
-        auto &err = std::cerr;
         auto result = vec/swiz;
         if ( result == expect ) return;
         failed( );
