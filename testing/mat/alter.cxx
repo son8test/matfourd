@@ -8,7 +8,6 @@
 int main( ) {
     auto test = []( Msg msg, auto result, auto expect ) {
         if ( result == expect && ~result == expect ) return;
-        failed( );
         err << msg
             << ", result: " << result
             << ",~result: " <<~result

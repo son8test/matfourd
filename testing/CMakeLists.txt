@@ -5,7 +5,6 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 include_directories( include )
 link_libraries( son8::matfourd )
 
-
 # Add tests ⮟ HERE ⮟ that should NOT use extra warning flags
 
 if ( MSVC )

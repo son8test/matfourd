@@ -16,7 +16,24 @@ public:
     void operator()( ) { failed = true; }
 };
 
-inline auto &err = std::cout;
+class Error final {
+    Failed failed{ };
+public:
+    template< typename Type >
+    Error &operator<<( Type const &type ) {
+        failed( );
+        std::cout << type;
+        return *this;
+    }
+
+    Error &operator<<( std::ostream &(*manip)(std::ostream&) ) {
+        manip( std::cout );
+        return *this;
+    }
+};
+
+inline Error err;
+// inline auto &err = std::cout;
 inline Failed failed;
 
 #endif
