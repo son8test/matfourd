@@ -1,6 +1,8 @@
 #include <son8/matfourd/vec/additive.hxx>
 #include <son8/matfourd/vec/equality.hxx>
 #include <son8/matfourd/print.hxx>
+// std
+#include <iostream>
 
 namespace m4d = son8::matfourd;
 
@@ -17,11 +19,12 @@ int main( ) {
 
     int failed = 0;
     auto test = [&failed]( Str const &msg, auto l, auto r, auto expect, bool minus ) {
+        auto &err = std::cerr;
         auto lr = ( minus ) ? l - r : l + r;
         auto rl = ( minus ) ? (-r) - (-l) : (+r) + (+l);
         if ( lr == rl && lr == expect && rl == expect ) return;
         ++failed;
-        std::cerr << msg
+        err << msg
             << ", l: " << l
             << ", r: " << r
             << ", expect: " << expect

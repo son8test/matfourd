@@ -1,5 +1,7 @@
 #include <son8/matfourd/vec/multiply.hxx>
 #include <son8/matfourd/print.hxx>
+// std
+#include <iostream>
 
 namespace m4d = son8::matfourd;
 
@@ -15,13 +17,14 @@ int main( ) {
 
     auto failed = 0u;
     auto test = [&failed]( Msg msg, auto l, auto r, auto expect ) {
+        auto &err = std::cerr;
         auto lr = l * r;
         auto rl = r * l;
         auto lr_L = ~l ^ r;
         auto rl_L = ~r ^ l;
         if ( lr == rl && lr == expect && rl == expect && lr_L == expect && rl_L == expect ) return;
         ++failed;
-        std::cout << msg
+        err << msg
             << ", l: " << l
             << ", r: " << r
             << ", expect: " << expect
