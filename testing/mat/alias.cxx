@@ -15,8 +15,8 @@ int main( ) {
             << ", result cols: " << cols
             << ", result rows: " << rows
             << ", expect cols: " << ecols
-            << ", expect rows: " << erows
-            << std::endl;
+            << ", expect rows: " << erows;
+            //<< std::endl;
     };
 
     TEST( 2, 2 );

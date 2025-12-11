@@ -13,7 +13,7 @@ class Failed final {
     bool failed{ };
 public:
     // TODO do better?
-   ~Failed( ) { if ( failed ) std::_Exit( EXIT_FAILURE ); }
+   ~Failed( ) { if ( failed ) std::exit( EXIT_FAILURE ); }
     void operator()( ) { failed = true; }
 };
 
@@ -35,7 +35,6 @@ public:
 };
 
 inline Error err;
-// inline auto &err = std::cout;
 inline Failed failed;
 
 #endif
