@@ -16,12 +16,12 @@ endif( )
 # Add tests ⮟ HERE ⮟ that SHOULD use extra warning flags
 
 # Vec
+add_executable( test-vec-alias vec/alias.cxx )
+add_test( NAME test-vec-alias COMMAND test-vec-alias )
 add_executable( test-vec-equality vec/equality.cxx )
 add_test( NAME test-vec-equality COMMAND test-vec-equality )
 add_executable( test-vec-additive vec/additive.cxx )
 add_test( NAME test-vec-additive COMMAND test-vec-additive )
-add_executable( test-vec-alias vec/alias.cxx )
-add_test( NAME test-vec-alias COMMAND test-vec-alias )
 add_executable( test-vec-multiply-dot vec/multiply/dot.cxx )
 add_test( NAME test-vec-multiply-dot COMMAND test-vec-multiply-dot )
 add_executable( test-vec-multiply-scalar vec/multiply/scalar.cxx )
@@ -33,6 +33,8 @@ add_test( NAME test-vec-type COMMAND test-vec-type )
 add_executable( test-vec-swizzles vec/swizzles.cxx )
 add_test( NAME test-vec-swizzles COMMAND test-vec-swizzles )
 # Mat
+add_executable( test-mat-alias mat/alias.cxx )
+add_test( NAME test-mat-alias COMMAND test-mat-alias )
 add_executable( test-mat-equality mat/equality.cxx )
 add_test( NAME test-mat-equality COMMAND test-mat-equality )
 add_executable( test-mat-type mat/type.cxx )
