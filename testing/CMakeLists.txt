@@ -41,7 +41,8 @@ add_executable( test-mat-type mat/type.cxx )
 add_test( NAME test-mat-type COMMAND test-mat-type )
 add_executable( test-mat-alter mat/alter.cxx )
 add_test( NAME test-mat-alter COMMAND test-mat-alter )
-
 add_executable( test-mat-additive mat/additive.cxx )
 add_test( NAME test-mat-additive COMMAND test-mat-additive )
+add_executable( test-mat-multiply-outer mat/multiply/outer.cxx )
+add_test( NAME test-mat-multiply-outer COMMAND test-mat-multiply-outer )
 
