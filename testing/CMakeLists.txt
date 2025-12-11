@@ -39,6 +39,9 @@ add_executable( test-mat-equality mat/equality.cxx )
 add_test( NAME test-mat-equality COMMAND test-mat-equality )
 add_executable( test-mat-type mat/type.cxx )
 add_test( NAME test-mat-type COMMAND test-mat-type )
-add_executable( test-alter mat/alter.cxx )
-add_test( NAME test-alter COMMAND test-alter )
+add_executable( test-mat-alter mat/alter.cxx )
+add_test( NAME test-mat-alter COMMAND test-mat-alter )
+
+add_executable( test-mat-additive mat/additive.cxx )
+add_test( NAME test-mat-additive COMMAND test-mat-additive )
 
