@@ -10,10 +10,14 @@ namespace m4d = son8::matfourd;
 using Msg = char const *;
 
 class Failed final {
-    bool failed{ };
+    bool failed{ EXIT_SUCCESS };
 public:
     // TODO do better?
-   ~Failed( ) { if ( failed ) std::exit( EXIT_FAILURE ); }
+   ~Failed( ) {
+       if ( failed != EXIT_SUCCESS ) {
+           std::atexit( []{ std::exit( EXIT_FAILURE ); } );
+        }
+    }
     void operator()( ) { failed = true; }
 };
 
