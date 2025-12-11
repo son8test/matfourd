@@ -8,7 +8,7 @@ Mat##c##x##r mat##c##x##r{ };\
 test("mat" #c "x" #r " col-major", mat##c##x##r, (unsigned)c, (unsigned)r );\
 test("mat" #c "x" #r " row-major",~mat##c##x##r, (unsigned)c, (unsigned)r )
 
-void son8::main( Args const & ) {
+void son8::main( Args ) {
     auto test = []( Msg msg, auto mat, auto ecols, auto erows ) {
         auto cols = mat.cols( ), rows = mat.rows( );
         if ( cols == ecols && rows == erows ) return;

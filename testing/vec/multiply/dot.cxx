@@ -2,7 +2,7 @@
 #include <son8/matfourd/vec/multiply.hxx>
 #include <son8/matfourd/print.hxx>
 
-void son8::main( Args const & ) {
+void son8::main( Args ) {
     Vec2 l2{ 1, 2 }, r2{ 2, 3 };
     Vec3 l3{ -1, 0, 4 }, r3{ 4, 8, 3 };
     Vec4 l4{ 4, 4, 4, 4 }, r4{ 4, 4, 4, 4 };

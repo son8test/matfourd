@@ -3,7 +3,7 @@
 #include <son8/matfourd/vec/equality.hxx>
 #include <son8/matfourd/print.hxx>
 
-void son8::main( Args const & ) {
+void son8::main( Args ) {
     auto test = []( Msg msg, auto result, auto expect ) {
         if ( result == expect ) return;
         err << msg

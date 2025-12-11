@@ -7,7 +7,7 @@
 #define VEC3_0 { 0, 0, 0 }
 #define VEC4_0 { 0, 0, 0, 0 }
 
-void son8::main( Args const & ) {
+void son8::main( Args ) {
     auto test = []( Msg msg, auto result, auto expect ) {
         if ( result == expect ) return;
         err << msg

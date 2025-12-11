@@ -3,7 +3,7 @@
 #include <son8/matfourd/vec/equality.hxx>
 #include <son8/matfourd/print.hxx>
 
-void son8::main( Args const & ) {
+void son8::main( Args ) {
     Vec2 l2{ 0, 1 }, r2{ 8, 7 }, plus2{ 8, 8 }, minus2{ -8, -6 };
     Vec3 l3{ 2, 3, 4 }, r3{ 6, 5, 4 }, plus3{ 8, 8, 8 }, minus3{ -4, -2, 0 };
     Vec4 l4{ 5, 6, 7, 8 }, r4{ 3, 2, 1, 0 }, plus4{ 8, 8, 8, 8 }, minus4{ 2, 4, 6, 8 };

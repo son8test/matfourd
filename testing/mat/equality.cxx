@@ -1,7 +1,7 @@
 #include <testing/mat_alias.hxx>
 #include <son8/matfourd/mat/equality.hxx>
 
-void son8::main( Args const & ) {
+void son8::main( Args ) {
     auto test = []( Msg msg, auto ...args ) {
         bool all = ( true && ... && args );
         if ( all ) return;

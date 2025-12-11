@@ -3,7 +3,7 @@
 #include <son8/matfourd/vec/equality.hxx>
 #include <son8/matfourd/print.hxx>
 
-void son8::main( Args const & ) {
+void son8::main( Args ) {
     auto test = []( Msg msg, auto l, auto r, auto expect ) {
         auto lr = l * r;
         auto rl = r * l;

@@ -2,7 +2,7 @@
 #include <son8/matfourd/vec/multiply.hxx>
 #include <son8/matfourd/vec/equality.hxx>
 
-void son8::main( Args const & ) {
+void son8::main( Args ) {
     using Vec = Vec3;
 
     auto result = Vec{ 1,-1, 0 } ^ Vec{ 8, 0,-8 };

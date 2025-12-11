@@ -1,7 +1,7 @@
 #include <testing/vec_alias.hxx>
 #include <son8/matfourd/vec/equality.hxx>
 
-void son8::main( Args const & ) {
+void son8::main( Args ) {
     auto test = []( char const *msg, auto ...args ) {
         bool all = ( true && ... && args );
         if ( all ) return;
