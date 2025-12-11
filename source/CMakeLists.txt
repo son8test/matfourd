@@ -8,3 +8,10 @@ FetchContent_Declare(
     GIT_TAG        ${TESTHASH}
 )
 FetchContent_MakeAvailable( son8__${TESTREPO} )
+
+FetchContent_Declare(
+    son8__mainland
+    GIT_REPOSITORY https://github.com/soneight/mainland.git
+    GIT_TAG        main
+)
+FetchContent_MakeAvailable( son8__mainland )

@@ -1,6 +1,6 @@
 #include <testing/vec_alias.hxx>
 
-int main( ) {
+void son8::main( Args const & ) {
     auto test = []( Msg msg, auto result, auto expect ) {
         if ( result == expect ) return;
         err << msg

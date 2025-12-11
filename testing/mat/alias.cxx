@@ -1,4 +1,5 @@
 #include <testing/mat_alias.hxx>
+#include <son8/main.hxx>
 
 #define TEST( c, r )\
 test("Mat" #c "x" #r " col-major", Mat##c##x##c{ }, (unsigned)c, (unsigned)r );\
@@ -7,7 +8,7 @@ Mat##c##x##r mat##c##x##r{ };\
 test("mat" #c "x" #r " col-major", mat##c##x##r, (unsigned)c, (unsigned)r );\
 test("mat" #c "x" #r " row-major",~mat##c##x##r, (unsigned)c, (unsigned)r )
 
-int main( ) {
+void son8::main( Args const & ) {
     auto test = []( Msg msg, auto mat, auto ecols, auto erows ) {
         auto cols = mat.cols( ), rows = mat.rows( );
         if ( cols == ecols && rows == erows ) return;

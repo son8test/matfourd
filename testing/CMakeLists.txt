@@ -3,7 +3,7 @@ set( CMAKE_CXX_STANDARD_REQUIRED ON )
 set( CMAKE_CXX_EXTENSIONS OFF )
 
 include_directories( include )
-link_libraries( son8::matfourd )
+link_libraries( son8::matfourd son8::mainland )
 
 # Add tests ⮟ HERE ⮟ that should NOT use extra warning flags
 

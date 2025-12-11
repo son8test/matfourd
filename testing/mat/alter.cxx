@@ -5,7 +5,7 @@
 
 #define T( m ) m4d::transpose( m )
 
-int main( ) {
+void son8::main( Args const & ) {
     auto test = []( Msg msg, auto result, auto expect ) {
         if ( result == expect && ~result == expect ) return;
         err << msg

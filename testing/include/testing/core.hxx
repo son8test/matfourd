@@ -1,6 +1,8 @@
 #ifndef SON8TEST_TESTING_CORE_HXX
 #define SON8TEST_TESTING_CORE_HXX
 
+#include <son8/main.hxx>
+
 #include <iostream>
 #include <cstdlib>
 
@@ -13,8 +15,9 @@ class Failed final {
     static inline bool status_{ EXIT_SUCCESS };
 public:
     // TODO do better?
-    Failed( ) { std::atexit( []{ std::exit( status_ ); } ); }
-    void operator()( ) { status_ = EXIT_FAILURE; }
+    //Failed( ) { std::atexit( []{ std::exit( status_ ); } ); }
+    Failed( ) { son8::exit = son8::Exit::Success; }
+    void operator()( ) { son8::exit = son8::Exit::Failure; }
 };
 
 struct RemoveThisFailed {
