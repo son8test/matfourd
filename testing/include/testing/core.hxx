@@ -12,7 +12,8 @@ using Msg = char const *;
 class Failed final {
     bool failed{ };
 public:
-   ~Failed( ) { if ( failed ) std::exit( EXIT_FAILURE ); }
+    // TODO do better?
+   ~Failed( ) { if ( failed ) std::_Exit( EXIT_FAILURE ); }
     void operator()( ) { failed = true; }
 };
 
