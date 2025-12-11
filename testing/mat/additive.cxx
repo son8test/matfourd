@@ -8,9 +8,9 @@
 
 #define ENDL( ) << std::endl
 
-#define V8_2 { 8, 5 }
+#define V8_2 { 8, 8 }
 #define V8_3 { 8, 8, 8 }
-#define V8_4 { 8, 5, 8, 8 }
+#define V8_4 { 8, 8, 8, 8 }
 
 void son8::main( Args ) {
 
