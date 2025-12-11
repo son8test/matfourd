@@ -27,7 +27,8 @@ public:
     }
 
     Error &operator<<( std::ostream &(*manip)(std::ostream&) ) {
-        manip( std::cout );
+        failed( );
+        manip( std::cerr );
         return *this;
     }
 };
