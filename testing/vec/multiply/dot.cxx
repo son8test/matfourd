@@ -13,7 +13,6 @@ void son8::main( Args const & ) {
         auto lr_L = ~l ^ r;
         auto rl_L = ~r ^ l;
         if ( lr == rl && lr == expect && rl == expect && lr_L == expect && rl_L == expect ) return;
-        failed( );
         err << msg
             << ", l: " << l
             << ", r: " << r

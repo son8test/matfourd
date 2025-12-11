@@ -2,7 +2,7 @@
 #include <son8/main.hxx>
 
 #define TEST( c, r )\
-test("Mat" #c "x" #r " col-major", Mat##c##x##c{ }, (unsigned)c, (unsigned)r );\
+test("Mat" #c "x" #r " col-major", Mat##c##x##r{ }, (unsigned)c, (unsigned)r );\
 test("Mat" #c "x" #r " row-major",~Mat##c##x##r{ }, (unsigned)c, (unsigned)r );\
 Mat##c##x##r mat##c##x##r{ };\
 test("mat" #c "x" #r " col-major", mat##c##x##r, (unsigned)c, (unsigned)r );\

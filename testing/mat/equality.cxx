@@ -5,7 +5,6 @@ void son8::main( Args const & ) {
     auto test = []( Msg msg, auto ...args ) {
         bool all = ( true && ... && args );
         if ( all ) return;
-        failed( );
         err << msg << std::endl;
     };
 

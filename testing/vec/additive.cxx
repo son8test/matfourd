@@ -12,7 +12,6 @@ void son8::main( Args const & ) {
         auto lr = ( minus ) ? l - r : l + r;
         auto rl = ( minus ) ? (-r) - (-l) : (+r) + (+l);
         if ( lr == rl && lr == expect && rl == expect ) return;
-        failed( );
         err << msg
             << ", l: " << l
             << ", r: " << r

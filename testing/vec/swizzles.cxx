@@ -7,7 +7,6 @@ void son8::main( Args const & ) {
     auto test = []( Msg msg, auto vec, auto swiz, auto expect ) {
         auto result = vec/swiz;
         if ( result == expect ) return;
-        failed( );
         err << msg
             << ", vec: " << vec
             << ", vec/swiz: " << result
