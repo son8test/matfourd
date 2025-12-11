@@ -11,12 +11,12 @@ int main( ) {
     auto test = []( Msg msg, auto mat, auto ecols, auto erows ) {
         auto cols = mat.cols( ), rows = mat.rows( );
         if ( cols == ecols && rows == erows ) return;
-        err << msg
+        std::cerr << msg
             << ", result cols: " << cols
             << ", result rows: " << rows
             << ", expect cols: " << ecols
-            << ", expect rows: " << erows;
-            //<< std::endl;
+            << ", expect rows: " << erows
+            << std::endl;
     };
 
     TEST( 2, 2 );
@@ -28,4 +28,6 @@ int main( ) {
     TEST( 4, 2 );
     TEST( 4, 3 );
     TEST( 4, 4 );
+
+    return EXIT_FAILURE;
 }
