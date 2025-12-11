@@ -10,15 +10,15 @@ namespace m4d = son8::matfourd;
 using Msg = char const *;
 
 class Failed final {
-    bool failed{ EXIT_SUCCESS };
+    static inline bool status_{ EXIT_SUCCESS };
 public:
     // TODO do better?
-   ~Failed( ) {
-       if ( failed != EXIT_SUCCESS ) {
-           std::atexit( []{ std::exit( EXIT_FAILURE ); } );
-        }
-    }
-    void operator()( ) { failed = true; }
+    Failed( ) { std::atexit( []{ std::exit( status_ ); } ); }
+    void operator()( ) { status_ = EXIT_FAILURE; }
+};
+
+struct RemoveThisFailed {
+    void operator()( ) { }
 };
 
 class Error final {
@@ -39,6 +39,6 @@ public:
 };
 
 inline Error err;
-inline Failed failed;
+inline RemoveThisFailed failed;
 
 #endif
