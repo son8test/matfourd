@@ -3,9 +3,6 @@
 #include <son8/matfourd/mat/equality.hxx>
 #include <son8/matfourd/print.hxx>
 
-#define PRINT( v ) ", " #v ": " << v
-#define PRINTEND( v ) ", " #v ": " << v << std::endl
-
 void son8::main( Args ) {
     auto test = []( Msg msg, auto vecL, auto vecR, auto expect ) {
         auto result = vecL ^ ~vecR;

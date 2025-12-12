@@ -3,11 +3,6 @@
 #include <son8/matfourd/mat/equality.hxx>
 #include <son8/matfourd/print.hxx>
 
-#define PRINT( v )\
-<< ", " #v ": " << v
-
-#define ENDL( ) << std::endl
-
 #define V8_2 { 8, 8 }
 #define V8_3 { 8, 8, 8 }
 #define V8_4 { 8, 8, 8, 8 }
@@ -21,13 +16,12 @@ void son8::main( Args ) {
         auto minusRL =-( ( -matR ) + ( -matL ) );
         if ( plusLR == plusRL && minusLR == minusRL && expect == plusLR && expect == ~plusLR ) return;
         err << msg
-            PRINT( plusLR )
-            PRINT(~plusLR )
-            PRINT( plusRL )
-            PRINT( minusLR )
-            PRINT( minusRL )
-            PRINT( expect )
-            ENDL( );
+            << PRINT( plusLR )
+            << PRINT(~plusLR )
+            << PRINT( plusRL )
+            << PRINT( minusLR )
+            << PRINT( minusRL )
+            << PRINTEND( expect );
     };
 
     Vec2 vec2L{ 0, 1 }, vec2R{ 8, 7 };

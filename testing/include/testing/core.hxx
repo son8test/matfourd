@@ -5,6 +5,9 @@
 
 #include <iostream>
 
+#define PRINT( v ) ", " #v ": " << v
+#define PRINTEND( v ) ", " #v ": " << v << std::endl
+
 namespace son8::matfourd { }
 namespace m4d = son8::matfourd;
 

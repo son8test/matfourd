@@ -45,4 +45,6 @@ add_executable( test-mat-additive mat/additive.cxx )
 add_test( NAME test-mat-additive COMMAND test-mat-additive )
 add_executable( test-mat-multiply-outer mat/multiply/outer.cxx )
 add_test( NAME test-mat-multiply-outer COMMAND test-mat-multiply-outer )
+add_executable( test-mat-multiply-scalar mat/multiply/scalar.cxx )
+add_test( NAME test-mat-multiply-scalar COMMAND test-mat-multiply-scalar )
 
