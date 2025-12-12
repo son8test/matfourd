@@ -7,10 +7,10 @@
 void son8::main( Args ) {
     auto test = []( auto mat, auto vec, auto expect ) {
         auto matXvec = mat * vec;
-        auto vecXmat = vec * m4d::transpose( mat );
-        if ( matXvec == expect && vecXmat == expect ) return;
+        auto vecXmat_ransposed = vec * m4d::transpose( mat );
+        if ( matXvec == expect && vecXmat_ransposed == expect ) return;
         err << PRINT( matXvec )
-            << PRINT( vecXmat )
+            << PRINT( vecXmat_ransposed )
             << PRINTEND( expect );
     };
 
