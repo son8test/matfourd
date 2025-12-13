@@ -15,6 +15,9 @@ endif( )
 
 # Add tests ⮟ HERE ⮟ that SHOULD use extra warning flags
 
+# Layout
+add_executable( test-layout layout.cxx )
+add_test( NAME test-layout COMMAND test-layout )
 # Vec
 add_executable( test-vec-alias vec/alias.cxx )
 add_test( NAME test-vec-alias COMMAND test-vec-alias )
