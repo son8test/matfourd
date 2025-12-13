@@ -18,6 +18,9 @@ endif( )
 # Layout
 add_executable( test-layout layout.cxx )
 add_test( NAME test-layout COMMAND test-layout )
+# Print
+add_executable( test-print print.cxx )
+add_test( NAME test-print COMMAND test-print )
 # Vec
 add_executable( test-vec-alias vec/alias.cxx )
 add_test( NAME test-vec-alias COMMAND test-vec-alias )
