@@ -15,6 +15,12 @@ endif( )
 
 # Add tests ⮟ HERE ⮟ that SHOULD use extra warning flags
 
+# Include ( is all include guards defined when including global matfourd.hxx )
+add_executable( test-include include.cxx )
+add_test( NAME test-include COMMAND test-include )
+# Core
+add_executable( test-core core.cxx )
+add_test( NAME test-core COMMAND test-core )
 # Layout
 add_executable( test-layout layout.cxx )
 add_test( NAME test-layout COMMAND test-layout )
