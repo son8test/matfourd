@@ -1,39 +1,29 @@
 #include <testing/vec_alias.hxx>
 
+#define TEST( s )\
+test( "Vec" #s " type col-major", Vec##s::size( ), Vec##s::order( ), (unsigned)s, false );\
+test( "Col" #s " type col-major", Col##s::size( ), Col##s::order( ), (unsigned)s, false );\
+test( "Row" #s " type row-major", Row##s::size( ), Row##s::order( ), (unsigned)s, true );\
+Vec##s vec##s;\
+Col##s col##s;\
+Row##s row##s;\
+test( "vec" #s " var col-major", vec##s.size( ), vec##s.order( ), (unsigned)s, false );\
+test( "col" #s " var col-major", col##s.size( ), col##s.order( ), (unsigned)s, false );\
+test( "row" #s " var row-major", row##s.size( ), row##s.order( ), (unsigned)s, true )
+
 void son8::main( Args ) {
-    auto test = []( Msg msg, auto result, auto expect ) {
-        if ( result == expect ) return;
+    auto test = []( Msg msg, auto resultSize, auto resultOrder, auto expectSize, auto expectOrder ) {
+        if ( resultSize == expectSize && resultOrder == expectOrder ) return;
         err << msg
-            << ", result: " << result
-            << ", expect: " << expect
+            << PRINT( resultSize )
+            << PRINT( resultOrder )
+            << PRINT( expectSize )
+            << PRINT( expectOrder )
             << std::endl;
     };
 
-    test( "Vec2 type col-major size", Vec2::size( ), 2u );
-    test( "Vec3 type col-major size", Vec3::size( ), 3u );
-    test( "Vec4 type col-major size", Vec4::size( ), 4u );
+    TEST( 2 );
+    TEST( 3 );
+    TEST( 4 );
 
-    test( "Col2 type col-major size", Col2::size( ), 2u );
-    test( "Col3 type col-major size", Col3::size( ), 3u );
-    test( "Col4 type col-major size", Col4::size( ), 4u );
-
-    test( "Row2 type col-major size", Row2::size( ), 2u );
-    test( "Row3 type col-major size", Row3::size( ), 3u );
-    test( "Row4 type col-major size", Row4::size( ), 4u );
-
-    Vec2 vec2; Vec3 vec3; Vec4 vec4;
-    Col2 col2; Col3 col3; Col4 col4;
-    Row2 row2; Row3 row3; Row4 row4;
-
-    test( "Vec2 var col-major size", vec2.size( ), 2u );
-    test( "Vec3 var col-major size", vec3.size( ), 3u );
-    test( "Vec4 var col-major size", vec4.size( ), 4u );
-
-    test( "Col2 var col-major size", col2.size( ), 2u );
-    test( "Col3 var col-major size", col3.size( ), 3u );
-    test( "Col4 var col-major size", col4.size( ), 4u );
-
-    test( "Row2 var col-major size", row2.size( ), 2u );
-    test( "Row3 var col-major size", row3.size( ), 3u );
-    test( "Row4 var col-major size", row4.size( ), 4u );
 }
