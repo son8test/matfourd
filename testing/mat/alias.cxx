@@ -4,9 +4,15 @@
 #define TEST( c, r )\
 test("Mat" #c "x" #r " col-major", Mat##c##x##r{ }, (unsigned)c, (unsigned)r );\
 test("Mat" #c "x" #r " row-major",~Mat##c##x##r{ }, (unsigned)c, (unsigned)r );\
+test("Col" #c "x" #r " col-major", Col##c##x##r{ }, (unsigned)c, (unsigned)r );\
+test("Row" #c "x" #r " row-major", Row##c##x##r{ }, (unsigned)c, (unsigned)r );\
 Mat##c##x##r mat##c##x##r{ };\
+Col##c##x##r col##c##x##r{ };\
+Row##c##x##r row##c##x##r{ };\
 test("mat" #c "x" #r " col-major", mat##c##x##r, (unsigned)c, (unsigned)r );\
-test("mat" #c "x" #r " row-major",~mat##c##x##r, (unsigned)c, (unsigned)r )
+test("mat" #c "x" #r " row-major",~mat##c##x##r, (unsigned)c, (unsigned)r );\
+test("col" #c "x" #r " col-major", col##c##x##r, (unsigned)c, (unsigned)r );\
+test("row" #c "x" #r " row-major", row##c##x##r, (unsigned)c, (unsigned)r )
 
 void son8::main( Args ) {
     auto test = []( Msg msg, auto mat, auto ecols, auto erows ) {

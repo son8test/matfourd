@@ -17,6 +17,6 @@ void son8::main( Args ) {
 
     test( "print Vec2 Col-Major", Vec2{ },  "Vec2[0, 0]" );
     test( "print Vec2 Row-Major",~Vec2{ }, "~Vec2[0, 0]" );
-    test( "print Mat2 Col-Major", Mat2x2{ }, "\nMat2x2{\n\tVec2[0, 0],\n\tVec2[0, 0]\n}" );
-    test( "print Mat2 Row-Major",~Mat2x2{ }, "\n~Mat2x2{\n\t~Vec2[0, 0],\n\t~Vec2[0, 0]\n}" );
+    test( "print Mat2 Col-Major", Mat2x2{ }, "\nMat2x2{\n\tVec2[0, 0],\n\tVec2[0, 0]\n}\n" );
+    test( "print Mat2 Row-Major",~Mat2x2{ }, "\n~Mat2x2{\n\t~Vec2[0, 0],\n\t~Vec2[0, 0]\n}\n" );
 }
