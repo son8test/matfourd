@@ -42,6 +42,8 @@ add_executable( test-vec-multiply-cross vec/multiply/cross.cxx )
 add_test( NAME test-vec-multiply-cross COMMAND test-vec-multiply-cross )
 add_executable( test-vec-type vec/type.cxx )
 add_test( NAME test-vec-type COMMAND test-vec-type )
+add_executable( test-vec-type-construct vec/type/construct.cxx )
+add_test( NAME test-vec-type-construct COMMAND test-vec-type-construct )
 add_executable( test-vec-swizzles vec/swizzles.cxx )
 add_test( NAME test-vec-swizzles COMMAND test-vec-swizzles )
 # Mat
