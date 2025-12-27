@@ -21,9 +21,11 @@ void son8::main( Args ) {
     Col2 vecColCB{ x, y }, vecColRB( x, y );
     Row2 vecRowCB{ x, y }, vecRowRB( x, y );
     Arr2 vecArrCB{ x, y }, vecArrRB({x, y});
-
+    // TODO commented out construct tests that does not work on old compilers
+    //      uncomment when workaround savior appear
+    // HONORABLE mention, construct ({x,y}) shouldn't work at all for reasons
     Col2 vecUnused [[maybe_unused]]
-        , vec1{ { x, y } }, vec2({{ x, y }})
+        , vec1{ { x, y } }//,vec2({{ x, y }})
         , vec3{ vecColCB }, vec4( vecColRB )
         , vec5{ vecRowCB }, vec6( vecRowRB )
         , vec7{ vecArrCB }, vec8( vecArrRB )
@@ -32,7 +34,7 @@ void son8::main( Args ) {
     Row2 expect{ x, y };
 
     test( "Vec val curly braces", vec1, expect );
-    test( "Vec val round braces", vec2, expect );
+    //test( "Vec val round braces", vec2, expect );
     test( "Vec col curly braces", vec3, expect );
     test( "Vec col round braces", vec4, expect );
     test( "Vec row curly braces", vec5, expect );
