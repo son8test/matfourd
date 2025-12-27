@@ -13,7 +13,8 @@ void son8::main( Args ) {
             << PRINTEND( ~expect );
     };
 
-    int const x = 1, y = 2;
+    using Type = int const;
+    Type x = 1, y = 2;
 
     using Arr2 = std::array< int, 2 >;
 
