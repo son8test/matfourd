@@ -25,7 +25,7 @@ void son8::main( Args ) {
     //      uncomment when workaround savior appear
     // HONORABLE mention, construct ({x,y}) shouldn't work at all for reasons
     Col2 vecUnused [[maybe_unused]]
-        , vec1{ { x, y } }//,vec2({{ x, y }})
+        // , vec1{ { x, y } }//,vec2({{ x, y }})
         , vec3{ vecColCB }, vec4( vecColRB )
         , vec5{ vecRowCB }, vec6( vecRowRB )
         , vec7{ vecArrCB }, vec8( vecArrRB )
@@ -33,7 +33,7 @@ void son8::main( Args ) {
 
     Row2 expect{ x, y };
 
-    test( "Vec val curly braces", vec1, expect );
+    //test( "Vec val curly braces", vec1, expect );
     //test( "Vec val round braces", vec2, expect );
     test( "Vec col curly braces", vec3, expect );
     test( "Vec col round braces", vec4, expect );

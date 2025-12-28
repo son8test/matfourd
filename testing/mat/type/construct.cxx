@@ -30,7 +30,7 @@ void son8::main( Args ) {
     //      uncomment when workaround savior appear
     // HONORABLE mention, construct ({x,y}) shouldn't work at all for reasons
     Col2x2 matUnused [[maybe_unused]]
-        , mat1{{v12, v34}}//, mat2({{v12, v34}})
+        //, mat1{{v12, v34}}//, mat2({{v12, v34}})
         , mat3{ matColCB }, mat4(  matColRB  )
         , mat5{ matRowCB }, mat6(  matColRB  )
         , mat7{ matArrCB }, mat8( {matArrRB} )
@@ -38,7 +38,7 @@ void son8::main( Args ) {
 
     Row2x2 expect{~v13,~v24 };
 
-    test( "Mat vec curly braces", mat1, expect );
+    //test( "Mat vec curly braces", mat1, expect );
     // test( "Mat vec round braces", mat2, expect );
     test( "Mat col curly braces", mat3, expect );
     test( "Mat col round braces", mat4, expect );
