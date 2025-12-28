@@ -27,6 +27,9 @@ add_test( NAME test-layout COMMAND test-layout )
 # Print
 add_executable( test-print print.cxx )
 add_test( NAME test-print COMMAND test-print )
+# Move
+add_executable( test-move move.cxx )
+add_test( NAME test-move COMMAND test-move )
 # Vec
 add_executable( test-vec-alias vec/alias.cxx )
 add_test( NAME test-vec-alias COMMAND test-vec-alias )
