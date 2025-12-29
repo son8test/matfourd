@@ -6,6 +6,11 @@ include_directories( include )
 link_libraries( son8::matfourd son8::mainland )
 
 # Add tests ⮟ HERE ⮟ that should NOT use extra warning flags
+message( INFO " tests without additional warning flags " )
+
+# Layout is deprecated
+add_executable( test-layout layout.cxx )
+add_test( NAME test-layout COMMAND test-layout )
 
 if ( MSVC )
     add_compile_options( /W4 )
@@ -14,6 +19,7 @@ else( )
 endif( )
 
 # Add tests ⮟ HERE ⮟ that SHOULD use extra warning flags
+message( INFO " tests with additional warning flags " )
 
 # Include ( is all include guards defined when including global matfourd.hxx )
 add_executable( test-include include.cxx )
@@ -21,9 +27,9 @@ add_test( NAME test-include COMMAND test-include )
 # Core
 add_executable( test-core core.cxx )
 add_test( NAME test-core COMMAND test-core )
-# Layout
-add_executable( test-layout layout.cxx )
-add_test( NAME test-layout COMMAND test-layout )
+# Order
+add_executable( test-order order.cxx )
+add_test( NAME test-order COMMAND test-order )
 # Print
 add_executable( test-print print.cxx )
 add_test( NAME test-print COMMAND test-print )

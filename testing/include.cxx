@@ -7,7 +7,7 @@ auto test( ) {
     failed += 1 << 0;
 #   endif
 
-#   ifndef SON8_MATFOURD_LAYOUT_HXX
+#   if defined( SON8_MATFOURD_INCLUDE_DEPRECATED ) && !defined( SON8_MATFOURD_LAYOUT_HXX )
     failed += 1 << 1;
 #   endif
 
@@ -75,17 +75,22 @@ auto test( ) {
     failed += 1 << 17;
 #   endif
 
+#   ifndef SON8_MATFOURD_ORDER_HXX
+    failed += 1 << 18;
+#   endif
+
     return failed;
 }
 
 #include <testing/core.hxx>
 #include <array>
 
-std::array< Msg, 18 > errors{{
-    "core", "layout", "mat",
-    "mat/additive", "mat/alias", "mat/alter", "mat/equality", "mat/multiply", "mat/type",
-    "print", "static", "vec",
-    "vec/additive", "vec/alias", "vec/equality", "vec/multiply", "vec/swizzles", "vec/type"
+std::array< Msg, 19 > errors{{ "core"
+    , "layout", "mat"
+    , "mat/additive", "mat/alias", "mat/alter", "mat/equality", "mat/multiply", "mat/type"
+    , "print", "static", "vec"
+    , "vec/additive", "vec/alias", "vec/equality", "vec/multiply", "vec/swizzles", "vec/type"
+    , "order"
 }};
 
 void son8::main( Args ) {

@@ -5,7 +5,7 @@ set( SON8PROJ son8__${PROJECT_NAME} )
 
 set( TESTUSER soneight CACHE STRING "FetchContent user andor organization" )
 set( TESTREPO matfourd CACHE STRING "FetchContent GIT_REPOSITORY project!" )
-set( TESTHASH 24fed7347af25b96b9cf7ee96fb19e3e8999c2ad CACHE STRING "FetchContent GIT_TAG hash andor tag!" )
+set( TESTHASH 367e727c5bae241dfc52c780d8d29ba275098b30 CACHE STRING "FetchContent GIT_TAG hash andor tag!" )
 
 include( FetchContent )
 
